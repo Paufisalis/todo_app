@@ -1,0 +1,22 @@
+<h2> LISTADO TO DO </h2>
+<br>
+<br>
+<% @todos.each do |todo|%>
+<div class="card-deck">
+  <div class="card">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <div class="card-body">
+      <h5 class="card-title">DATOS</h5>
+      <p class="card-text"><%= todo.description %></p>
+      <p class="card-text"><%= todo.completed %></p>
+      <div class="col col-6">
+        <%= link_to "Mostrar", todo, class:"btn btn-outline-info" %>
+        <%= link_to "Editar", edit_todo_path(todo), class:"btn btn-outline-success" %>
+        <%= link_to "Eliminar", todo, method: :delete, class:"btn btn-outline-danger", data: {confirm: 'Estas seguro?'} %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+<br>
+<%= link_to "Crear ToDo", todos_new_path, class:"btn btn-outline-primary" %>
