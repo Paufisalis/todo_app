@@ -1,4 +1,7 @@
-<h2> LISTADO TO DO </h2>
+<br>
+<br>
+<br>
+<h2> LISTAR ToDo </h2>
 <br>
 <br>
 <% @todos.each do |todo|%>
@@ -12,11 +15,16 @@
       <div class="col col-6">
         <%= link_to "Mostrar", todo, class:"btn btn-outline-info" %>
         <%= link_to "Editar", edit_todo_path(todo), class:"btn btn-outline-success" %>
+        <%= link_to "Completar", complete_todo_path(todo), class:"btn btn-outline-dark" %>
         <%= link_to "Eliminar", todo, method: :delete, class:"btn btn-outline-danger", data: {confirm: 'Estas seguro?'} %>
       </div>
     </div>
   </div>
 </div>
+<br>
+<br>
 <% end %>
 <br>
 <%= link_to "Crear ToDo", todos_new_path, class:"btn btn-outline-primary" %>
+<br>
+<br>
